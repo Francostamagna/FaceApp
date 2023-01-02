@@ -1,4 +1,4 @@
-import {loadGLTF, loadCollada, loadFBX} from "/applications/libs/loader";
+import {loadGLTF, loadCollada, loadFBX} from "applications/libs/loader";
 
 const THREE = window.MINDAR.FACE.THREE;
 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scene.add(light);
     scene.add(light2);
 
-    const occluder = await loadGLTF('/applications/assets/models/sparkar-occluder/headOccluder.glb');
+    const occluder = await loadGLTF('applications/assets/models/sparkar-occluder/headOccluder.glb');
     occluder.scene.scale.set(0.065, 0.065, 0.065);
     occluder.scene.position.set(0, -0.3, -0,20);
     occluder.scene.traverse((o) => {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const occluderAnchor = mindarThree.addAnchor(168);
     occluderAnchor.group.add(occluder.scene);
 
-    const glasses = await loadGLTF('/applications/assets/models/corona3/corona3.glb');
+    const glasses = await loadGLTF('applications/assets/models/corona3/corona3.glb');
     glasses.scene.rotation.set(-0.8,5.2, -1.6);
     glasses.scene.position.set(-0.05, -0.1, -0.2);
     glasses.scene.scale.set(0.6, 0.8, -1);
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const glasses2Anchor = mindarThree.addAnchor(168);
     glasses2Anchor.group.add(glasses2.scene);*/
 
-    const hat1 = await loadGLTF('/applications/assets/models/corona/corona.glb');
+    const hat1 = await loadGLTF('applications/assets/models/corona/corona.glb');
     hat1.scene.rotation.set(-0.1,3.1, 0);
     hat1.scene.position.set(0, 0, -0.2);
     hat1.scene.scale.set(0.6, 0.6, -1);
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hat1Anchor = mindarThree.addAnchor(10);
     hat1Anchor.group.add(hat1.scene);
 
-    const hat2 = await loadGLTF('/applications/assets/models/corona2/corona2.glb');
+    const hat2 = await loadGLTF('applications/assets/models/corona2/corona2.glb');
     hat2.scene.rotation.set(-0.4,2.9, -0.1);
     hat2.scene.position.set(0, 0, -0.4);
     hat2.scene.scale.set(0.8, 0.7, -1);
