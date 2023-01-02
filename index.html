@@ -79,18 +79,43 @@
 	border-radius: 50%;
 	transform: translateX(-50%);
 	z-index: 10;
+	font-size: x-large;
+	font-family: sans-serif;
+	font-weight: bolder;
       }
+
+	#zoa {
+    position: absolute;
+		border: solid 5px;
+	width: 15vw;
+	height: 50px;
+	object-fit: cover;
+	cursor: pointer;
+	top: 1vh;
+		
+	}  
+
+	#zoaRight{
+		position: absolute;
+		top: 1vh;
+		border: solid 5px;
+	width: 15vw;
+	height: 50px;
+	object-fit: cover;
+	cursor: pointer;
+	right: 0vw;
+	}
+
     </style>
   </head>
   <body>
-    <div id="selections">
-      <img id="hat1" src="applications/assets/models/navidad/navidad.png"/>
-      <img id="hat2" src="applications/assets/models/hat2/thumbnail.png"/>
-      <img id="glasses1" src="applications/assets/models/glasses1/thumbnail.png"/>
-      <img id="glasses2" src="applications/assets/models/glasses2/thumbnail.png"/>
-      <img id="earring" src="applications/assets/models/earring/thumbnail.png"/>
-    </div>
-
+    <img id="zoa" src="applications/assets/logozoa/zoafinal.jpg">
+	<div id="selections">
+      <img id="hat1" src="applications/assets/models/corona/6baja.jpg"/>
+      <img id="hat2" src="applications/assets/models/corona2/4baja.jpg"/>
+      <img id="glasses1" src="applications/assets/models/corona3/corona3.jpg"/>
+      </div>
+	<img id="zoaRight" src="applications/assets/logozoa/zoafinal.jpg">
     <button id="capture"></button>
 
     <div id="preview">

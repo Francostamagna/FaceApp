@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const occluder = await loadGLTF('applications/assets/models/sparkar-occluder/headOccluder.glb');
     occluder.scene.scale.set(0.065, 0.065, 0.065);
-    occluder.scene.position.set(0, -0.3, 0.15);
+    occluder.scene.position.set(0, -0.3, -0,20);
     occluder.scene.traverse((o) => {
       if (o.isMesh) {
 	const occluderMaterial = new THREE.MeshPhongMaterial({colorWrite: false});
@@ -58,35 +58,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const occluderAnchor = mindarThree.addAnchor(168);
     occluderAnchor.group.add(occluder.scene);
 
-    const glasses = await loadGLTF('applications/assets/models/glasses1/scene.gltf');
-    glasses.scene.scale.set(0.008, 0.008, 0.01);
-    glasses.scene.renderOrder = 1;
-    const glassesAnchor = mindarThree.addAnchor(168);
+    const glasses = await loadGLTF('applications/assets/models/corona3/corona3.glb');
+    glasses.scene.rotation.set(-0.8,5.2, -1.6);
+    glasses.scene.position.set(-0.05, -0.1, -0.2);
+    glasses.scene.scale.set(0.6, 0.8, -1);
+    glasses.scene.renderOrder = 2;
+    const glassesAnchor = mindarThree.addAnchor(10);
     glassesAnchor.group.add(glasses.scene);
-
-    const glasses2 = await loadGLTF('applications/assets/models/glasses2/scene.gltf');
+   
+   /* const glasses2 = await loadGLTF('applications/assets/models/glasses2/scene.gltf');
     glasses2.scene.rotation.set(0, -Math.PI/2, 0);
     glasses2.scene.position.set(0, -0.3, 0);
     glasses2.scene.scale.set(0.6, 0.6, 0.6);
     glasses2.scene.renderOrder = 1;
     const glasses2Anchor = mindarThree.addAnchor(168);
-    glasses2Anchor.group.add(glasses2.scene);
+    glasses2Anchor.group.add(glasses2.scene);*/
 
-    const hat1 = await loadGLTF('applications/assets/models/navidad/navidad.glb');
-    hat1.scene.position.set(0, 0.7, -0.5);
-    hat1.scene.scale.set(3.5, 2, -1);
+    const hat1 = await loadGLTF('applications/assets/models/corona/corona.glb');
+    hat1.scene.rotation.set(-0.1,3.1, 0);
+    hat1.scene.position.set(0, 0, -0.2);
+    hat1.scene.scale.set(0.6, 0.6, -1);
     hat1.scene.renderOrder = 2;
     const hat1Anchor = mindarThree.addAnchor(10);
     hat1Anchor.group.add(hat1.scene);
 
-    const hat2 = await loadGLTF('applications/assets/models/hat2/scene.gltf');
-    hat2.scene.position.set(0, -0.2, -0.5);
-    hat2.scene.scale.set(0.008, 0.008, 0.008);
-    hat2.scene.renderOrder = 1;
-    const hat2Anchor = mindarThree.addAnchor(151);
+    const hat2 = await loadGLTF('applications/assets/models/corona2/corona2.glb');
+    hat2.scene.rotation.set(-0.4,2.9, -0.1);
+    hat2.scene.position.set(0, 0, -0.4);
+    hat2.scene.scale.set(0.8, 0.7, -1);
+    hat2.scene.renderOrder = 2;
+    const hat2Anchor = mindarThree.addAnchor(10);
     hat2Anchor.group.add(hat2.scene);
 
-    const earringLeft = await loadGLTF('applications/assets/models/earring/scene.gltf');
+    /*const earringLeft = await loadGLTF('applications/assets/models/earring/scene.gltf');
     earringLeft.scene.position.set(0, -0.3, -0.3);
     earringLeft.scene.scale.set(0.05, 0.05, 0.05);
     earringLeft.scene.renderOrder = 1;
@@ -98,10 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
     earringRight.scene.scale.set(0.05, 0.05, 0.05);
     earringRight.scene.renderOrder = 1;
     const earringRightAnchor = mindarThree.addAnchor(356);
-    earringRightAnchor.group.add(earringRight.scene);
+    earringRightAnchor.group.add(earringRight.scene);*/
 
-    const buttons = ["#glasses1", "#glasses2", "#hat1", "#hat2", "#earring"];
-    const models = [[glasses.scene], [glasses2.scene], [hat1.scene], [hat2.scene], [earringLeft.scene, earringRight.scene]];
+    const buttons = ["#glasses1", "#hat1", "#hat2"];
+    const models = [[glasses.scene],[hat1.scene], [hat2.scene]];
     const visibles = [true, false, false, true, true];
 
     const setVisible = (button, models, visible) => {
@@ -169,3 +173,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   start();
 });
+//<img id="glasses1" src="applications/assets/models/corona3/corona3.jpg"/>
