@@ -1,10 +1,8 @@
 import {loadGLTF} from "/applications/libs/loader.js";
 
-const THREE =  window.MINDAR.FACE.THREE;
+const THREE = window.MINDAR.FACE.THREE;
 
-const mindarThree = new window.MINDAR.FACE.MindARThree({
-  container: document.body,
-});
+
 
 
 const capture = (mindarThree) => {
